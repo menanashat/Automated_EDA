@@ -58,7 +58,7 @@ def get_data_from_file(file_path):
 	#dimensionality_reduction
 	n_components=2
 	pca = PCA(n_components=n_components)
-	reduced_df = pca.fit_transform(files)
+	reduced_df = pca.fit_transform(files[numeric_list])
 
   	# Create a new dataset with the reduced dimensionality.
 	reduced_df = pd.DataFrame(reduced_df, columns=[f"PC{i}" for i in range(n_components)])
@@ -66,7 +66,7 @@ def get_data_from_file(file_path):
 	print(reduced_df)
 
 
-get_data_from_file("D:\\New folder (5)\\Fake.csv")
+get_data_from_file("D:\\Mucis recommetion\\Music_recommendation\\members.csv")
 
 
 
